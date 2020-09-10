@@ -1,0 +1,27 @@
+{
+  "name": "paper-clipper",
+  "version": "1.0.0",
+  "description": "Use Clipper's boolean and offsetting operations in paper.js",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "files": ["lib/**/*"],
+  "repository": "https://gitlab.com/northamerican/paper-clipper",
+  "author": "Chris Bitsakis",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "js-angusj-clipper": "^1.1.0",
+    "paper": "^0.12.11",
+    "prettier": "^2.1.1",
+    "simplify-js": "^1.2.4",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
