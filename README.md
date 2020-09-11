@@ -59,3 +59,5 @@ The `clipperUnite` method accepts a Paper.js Path but will discard handles, trea
 
 
 [![npm version](https://badge.fury.io/js/paper-clipper.svg)](https://badge.fury.io/js/paper-clipper)
+
+![paper-clipper strands](https://i.imgur.com/ZajvDJx.png)
