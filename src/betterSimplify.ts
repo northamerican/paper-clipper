@@ -10,7 +10,7 @@ const clearData = (item: paper.Item) => {
 const cloneWithoutData = (item: paper.Item) => 
   clearData(item.clone({ insert: false }))
 
-// Get part of a path from offset to offset
+// Get part of a path from offsets
 // Returns new path
 const getPathPart = (targetPath: paper.Path, from: number, distance = Infinity) => {
   const reverse = distance < 0
@@ -157,11 +157,9 @@ const betterSimplify = (tolerance: number) => (targetPath: paper.Path): paper.Pa
 
   const pathParts = splitAtOffsets(path)(angledSegmentOffsets)
     .map(removeDuplicateAdjacentSegments)
-
-  const simplifiedPathParts = pathParts
     .map(simplifyCopy(tolerance))
 
-  const joinedPath = joinPaths(simplifiedPathParts)
+  const joinedPath = joinPaths(pathParts)
 
   if (!joinedPath) return targetPath
 
