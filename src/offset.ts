@@ -51,6 +51,7 @@ const clipperOffset = (clipper: clipperLib.ClipperLibWrapper) => async (path: pa
     .map(offsetPath => 
       new paper.Path({
         closed,
+        // The simplify-js library performs simplifications on polygons. This improves performance before simplifying into curves with Paper.
         segments: simplify(offsetPath.map(point => ({ 
           x: point.x / scale, 
           y: point.y / scale 
