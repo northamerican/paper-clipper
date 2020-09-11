@@ -50,7 +50,7 @@ As Clipper supports polygons only (ie. paths without bezier curves), paper-clipp
 
 ### clipperUnite
 
-The `clipperUnite` method accepts a Paper.js Path but will discard handles, treating the path as a polygon. It offers better performance than Paper.js [Path#unite](http://paperjs.org/reference/path/#unite-path) when this boolean operation is needed on Paths with no segment handles. 
+The `clipperUnite` method accepts a Paper.js Path but will discard handles, treating the path as a polygon. It offers better performance than Paper.js [`Path#unite`](http://paperjs.org/reference/path/#unite-path) when this boolean operation is needed on Paths with no segment handles. 
 
 ### Further development
 
