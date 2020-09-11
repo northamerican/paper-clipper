@@ -2,7 +2,8 @@
   "name": "paper-clipper",
   "version": "1.0.0-alpha",
   "description": "Use Clipper's boolean and offsetting operations in paper.js",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
@@ -18,12 +19,12 @@
   "dependencies": {
     "js-angusj-clipper": "^1.1.0",
     "paper": "^0.12.11",
-    "prettier": "^2.1.1",
-    "simplify-js": "^1.2.4",
-    "tslint": "^6.1.3",
-    "tslint-config-prettier": "^1.18.0"
+    "simplify-js": "^1.2.4"
   },
   "devDependencies": {
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "prettier": "^2.1.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0"
   }
 }
