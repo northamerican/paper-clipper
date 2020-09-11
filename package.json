@@ -1,6 +1,6 @@
 {
   "name": "paper-clipper",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "description": "Use Clipper's boolean and offsetting operations in paper.js",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -16,7 +16,15 @@
   "author": "Chris Bitsakis",
   "license": "MIT",
   "private": false,
-  "keywords": ["paperjs", "paper", "offset", "offsetting", "clipper", "boolean", "operations"],
+  "keywords": [
+    "paperjs",
+    "paper",
+    "offset",
+    "offsetting",
+    "clipper",
+    "boolean",
+    "operations"
+  ],
   "dependencies": {
     "js-angusj-clipper": "^1.1.0",
     "paper": "^0.12.11",
