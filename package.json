@@ -1,6 +1,6 @@
 {
   "name": "paper-clipper",
-  "version": "1.0.0",
+  "version": "1.0-alpha",
   "description": "Use Clipper's boolean and offsetting operations in paper.js",
   "main": "index.js",
   "scripts": {
