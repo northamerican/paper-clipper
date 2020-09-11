@@ -22,7 +22,7 @@ npm install --save paper-clipper
 Include methods from paper-clipper
 
 ```js
-import { clipperOffset, clipperUnite } from 'paper-clipper'
+import { clipperLib, clipperOffset, clipperUnite } from 'paper-clipper'
 ```
 
 In an `async` function:
