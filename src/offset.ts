@@ -22,7 +22,7 @@ enum JoinTypes {
 const scale = 1000
 
 const clipperOffset = (clipper: clipperLib.ClipperLibWrapper) => async (path: paper.Path, offset: number, tolerance: number = 0.5): Promise<paper.Path[]> => {
-  const { closed, strokeJoin, strokeCap } = path
+  const { closed, strokeJoin, strokeCap, miterLimit } = path
   const pathCopy = path.clone() as paper.Path
   pathCopy.flatten(1)
   
@@ -35,6 +35,7 @@ const clipperOffset = (clipper: clipperLib.ClipperLibWrapper) => async (path: pa
 
   const offsetPaths = clipper.offsetToPaths({
     delta: offset * scale,
+    miterLimit: miterLimit * scale,
     arcTolerance: 0.25 * scale,
     offsetInputs: [{
       // @ts-ignore
