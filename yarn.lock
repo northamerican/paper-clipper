@@ -137,9 +137,9 @@ inherits@2:
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
 
 js-angusj-clipper@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/js-angusj-clipper/-/js-angusj-clipper-1.1.0.tgz#258c1fc015c0d8165b0ddbfbfbafd56a0be0becf"
-  integrity sha512-5vTZAawOtJkaMlObC0yQ0Uy98RkSO1tcexQRrZF2uZx4iHSskfemDaEfwFt6/cwfiPLnzI9GLHM6O6Gm1O++FA==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/js-angusj-clipper/-/js-angusj-clipper-1.1.1.tgz#37a5f509e798d9cc41220eb6bfc0165d9c41c6f6"
+  integrity sha512-gXCBJPQM7dVbz36ipzM5IOvmsxK2RUsN5o9xIuhvztiULGZbtqHBb0AMZu2J9BYn54nubrY0pVhVMwWLcQ+Vhw==
 
 js-tokens@^4.0.0:
   version "4.0.0"
@@ -181,9 +181,9 @@ once@^1.3.0:
     wrappy "1"
 
 paper@^0.12.11:
-  version "0.12.11"
-  resolved "https://registry.yarnpkg.com/paper/-/paper-0.12.11.tgz#21914ab0bbef939241ace5e4c87ff2543e7c8b7d"
-  integrity sha512-m6TKiyUr1A8zz6qdyBdYkb63OSRcNODlWZDxjEXFHtRjSlmMckFeSDdnuLYXsgwzcv3s36LgtrPk88y+gmA5JA==
+  version "0.12.15"
+  resolved "https://registry.yarnpkg.com/paper/-/paper-0.12.15.tgz#28b5e5ce0f7a99a851e980f6715f376881dfbc84"
+  integrity sha512-9qqtcY+V0Sd2RTLZKh7rTfWDbhfitOrtq3kzgOufhGpuYpCUXM+3UIK61au14tI0F9NA4xSttDYfk376O50aPA==
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
@@ -196,9 +196,9 @@ path-parse@^1.0.6:
   integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
 
 prettier@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.1.1.tgz#d9485dd5e499daa6cb547023b87a6cf51bee37d6"
-  integrity sha512-9bY+5ZWCfqj3ghYBLxApy2zf6m+NJo5GzmLTpr9FsApsfjriNnS2dahWReHMi7qNPhhHl9SYHJs2cHZLgexNIw==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.1.tgz#76903c3f8c4449bc9ac597acefa24dc5ad4cbea6"
+  integrity sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
 
 resolve@^1.3.2:
   version "1.17.0"
@@ -266,9 +266,9 @@ tsutils@^2.29.0:
     tslib "^1.8.1"
 
 typescript@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
-  integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
+  integrity sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==
 
 wrappy@1:
   version "1.0.2"

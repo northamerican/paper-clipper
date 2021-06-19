@@ -1,20 +1,13 @@
 import paper from 'paper'
 
+export const paperClipperSimplifyTolerance = 2.5
 const geomEpsilon = 1e-4
-
-const clearData = (item: paper.Item) => {
-  item.data = {}
-  return item
-}
-
-const cloneWithoutData = (item: paper.Item) => 
-  clearData(item.clone({ insert: false }))
 
 // Get part of a path from offsets
 // Returns new path
 const getPathPart = (targetPath: paper.Path, from: number, distance = Infinity) => {
   const reverse = distance < 0
-  const path = cloneWithoutData(targetPath) as paper.Path
+  const path = targetPath.clone({ insert: false })
   const pathPart = path.splitAt(from) || path
 
   if (reverse) {
@@ -76,27 +69,6 @@ const segmentIsAngled = (threshold = 1) => (segment: paper.Segment) => {
   return isAngled
 }
 
-const removeDuplicateAdjacentSegments = (path: paper.Path): paper.Path => {
-  const { segments } = path
-  const segmentsBefore = segments.length
-
-  segments.forEach(segment => {
-    const { next } = segment
-
-    if (!next) return
-
-    const duplicateSegment = segment.point.isClose(next.point, geomEpsilon)
-
-    if (duplicateSegment) {
-      next.handleIn = segment.handleIn.clone()
-
-      segment.remove()
-    }
-  })
-
-  return segmentsBefore > segments.length ? removeDuplicateAdjacentSegments(path) : path
-}
-
 const splitAtOffsets = (path: paper.Path) => (offsets: number[]) => {
   if (offsets.length === 0) return [path]
   if (offsets.length === 1 && path.closed) return [path]
@@ -129,7 +101,7 @@ const joinPaths = (paths: paper.Path[]) => {
   })
 }
 
-const simplifyCopy = (tolerance: number) => (targetPathPart: paper.Path) => {
+const recursiveSimplify = (tolerance: number) => (targetPathPart: paper.Path) => {
   const pathPart = targetPathPart.clone({ insert: false }) as paper.Path
 
   pathPart.simplify(tolerance)
@@ -139,15 +111,14 @@ const simplifyCopy = (tolerance: number) => (targetPathPart: paper.Path) => {
   return hasMoreSegments ? targetPathPart : pathPart
 }
 
-const betterSimplify = (tolerance: number) => (targetPath: paper.Path): paper.Path => {
-  const path = removeDuplicateAdjacentSegments(targetPath)
-  const isClosed = path.closed
+const paperClipperSimplify = (tolerance: number = paperClipperSimplifyTolerance) => (targetPath: paper.Path): paper.Path => {
+  const path = targetPath
+  const { closed } = path
 
   if (path.length === 0) return targetPath
 
-  if (isClosed) {
+  if (closed) {
     path.closed = false
-    path.addSegments([path.firstSegment.clone()])
   }
 
   const angledSegments = path.segments.filter(segmentIsAngled(45))
@@ -156,14 +127,13 @@ const betterSimplify = (tolerance: number) => (targetPath: paper.Path): paper.Pa
   )
 
   const pathParts = splitAtOffsets(path)(angledSegmentOffsets)
-    .map(removeDuplicateAdjacentSegments)
-    .map(simplifyCopy(tolerance))
+    .map(recursiveSimplify(tolerance))
 
   const joinedPath = joinPaths(pathParts)
 
   if (!joinedPath) return targetPath
 
-  if (isClosed) {
+  if (closed) {
     joinedPath.join(joinedPath)
     joinedPath.closed = true
   }
@@ -171,4 +141,4 @@ const betterSimplify = (tolerance: number) => (targetPath: paper.Path): paper.Pa
   return joinedPath
 }
 
-export default betterSimplify
+export default paperClipperSimplify
