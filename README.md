@@ -37,9 +37,9 @@ const clipper = await clipperLib.loadNativeClipperLibInstanceAsync(
 
 ### clipperOffset
 
-As Clipper supports polygons only (ie. paths without bezier curves), paper-clipper's `clipperOffset` method will [`Path#flatten`](http://paperjs.org/reference/path/#flatten) the Paper.js Path, offset it, then apply path simplification to the resulting path.
+As Clipper supports polygons only (ie. paths without bezier curves), paper-clipper's `clipperOffset` method will [`Path#flatten`](http://paperjs.org/reference/path/#flatten) the Paper.js Path, offset it, then apply simplification to the resulting path.
 
-Path simplification and smoothing is performed by the built-in `paperClipperSimplify` function which uses Paper's [`Path#simplify`](http://paperjs.org/reference/path/#simplify) method, modified to better retain edges of the input path.
+Path simplification and smoothing is performed by the built-in `paperClipperSimplify` function which uses Paper's [`Path#simplify`](http://paperjs.org/reference/path/#simplify) method, modified to better conserve edges of the input path.
 
 ```js
 const path = new paper.Path(..)
